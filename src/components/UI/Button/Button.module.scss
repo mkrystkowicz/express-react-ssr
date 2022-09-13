@@ -1,0 +1,18 @@
+@import "../../../styles/base.scss";
+
+.Button {
+  color: $secondary;
+  background-color: $primary;
+  padding: calc($sm * 0.5) $lg;
+  border: 1px solid transparent;
+  font-size: $sm;
+  font-weight: lighter;
+  transition: background-color .2s ease-out, color .2s ease-out;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $secondary;
+    color: $primary;
+    border-color: $primary;
+  }
+}

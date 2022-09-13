@@ -1,0 +1,28 @@
+@import '../../../styles/base.scss';
+
+.Input {
+  border: none;
+  background: transparent;
+  border-bottom: solid 1px $cyan;
+  padding: calc($sm / 2);
+  font-size: $sm;
+  font-family: 'Roboto';
+  font-weight: lighter;
+  color: $cyan;
+  transition: border-color .2s ease-out;
+
+  &::placeholder {
+    color: $cyan;
+    transition: color .2s ease-in-out;
+  }
+
+  &:hover::placeholder {
+    color: $primary;
+  }
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+    color: $primary;
+  }
+}
