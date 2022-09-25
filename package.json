@@ -5,10 +5,10 @@
   "main": "index.js",
   "scripts": {
     "clear": "rimraf build",
-    "build:server": "webpack --config webpack.server.config.js",
+    "build:server": "webpack --config webpack/webpack.server.config.js",
     "start:server": "node build/server/bundle.js",
     "dev:server": "nodemon --ignore build --exec 'run-s clear build:server start:server'",
-    "dev:client": "webpack serve --config webpack.client.config.js",
+    "dev:client": "webpack serve --config webpack/webpack.client.config.js",
     "dev": "run-p dev:client dev:server"
   },
   "repository": {

@@ -1,35 +1,47 @@
 const path = require('path');
-const webpackNodeExternals = require('webpack-node-externals');
 const { merge } = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const sharedConfig = require('./webpack.shared.config.js');
 
-let config = {
-  target: 'node',
-  entry: './server/index.js',
+const clientPort = 8080;
+
+const config = {
+  target: 'web',
+  entry: path.join(__dirname, '..', '/client/index.js' ),
   output: {
-    path: path.join(__dirname, './build/server'),
-    filename: 'bundle.js',
+    path: path.join(__dirname, '..', '/build/client'),
+    filename: 'scripts/bundle.js',
+    publicPath: `http://localhost:${clientPort}/`,
   },
-  externals: [webpackNodeExternals()],
+  devServer: {
+    port: clientPort,
+    liveReload: true,
+  },
   module: {
     rules: [
       {
         test: /\.scss$/,
         use: [
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
               modules: {
-                exportOnlyLocals: true,
                 exportLocalsConvention: 'camelCase',
                 localIdentName: '[local]_[hash:base64:5]',
               },
             },
           },
+          'sass-loader',
         ],
       },
     ],
   },
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'styles/bundle.css',
+    }),
+  ],
 };
 
 module.exports = merge(sharedConfig, config);
