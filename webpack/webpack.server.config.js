@@ -11,25 +11,6 @@ let config = {
     filename: 'bundle.js',
   },
   externals: [webpackNodeExternals()],
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                exportOnlyLocals: true,
-                exportLocalsConvention: 'camelCase',
-                localIdentName: '[local]_[hash:base64:5]',
-              },
-            },
-          },
-        ],
-      },
-    ],
-  },
 };
 
 module.exports = merge(sharedConfig, config);

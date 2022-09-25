@@ -1,9 +1,13 @@
 import React from 'react';
-import style from './style';
+import styled from 'styled-components'
+
+const Greeting = styled.h1`
+  color: green;
+`
 
 const App = () => (
   <>
-    <div className={style.app}>Hello World</div>
+    <Greeting>Hello World</Greeting>
     <button onClick={e => alert('Hello You!')}>Say Hello Back!</button>
   </>
 );

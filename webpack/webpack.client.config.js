@@ -17,31 +17,6 @@ const config = {
     port: clientPort,
     liveReload: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              modules: {
-                exportLocalsConvention: 'camelCase',
-                localIdentName: '[local]_[hash:base64:5]',
-              },
-            },
-          },
-          'sass-loader',
-        ],
-      },
-    ],
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles/bundle.css',
-    }),
-  ],
 };
 
 module.exports = merge(sharedConfig, config);
