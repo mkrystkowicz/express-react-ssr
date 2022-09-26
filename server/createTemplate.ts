@@ -1,4 +1,10 @@
-export const createTemplate = ({ clientBundleScript, clientBundleStyle, content }) => `
+interface IcreateTemplate {
+  clientBundleScript: string;
+  clientBundleStyle: string;
+  content: string;
+}
+
+export const createTemplate = ({ clientBundleScript, clientBundleStyle, content }: IcreateTemplate) => `
         <!DOCTYPE html>
         <html lang="en">
             <head>
