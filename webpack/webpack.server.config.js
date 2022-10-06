@@ -5,7 +5,7 @@ const sharedConfig = require('./webpack.shared.config.js');
 
 let config = {
   target: 'node',
-  entry: path.join(__dirname, '..', '/server/index.js'),
+  entry: path.join(__dirname, '..', '/server/index.tsx'),
   output: {
     path: path.join(__dirname, '..', '/build/server'),
     filename: 'bundle.js',
