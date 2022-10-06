@@ -1,17 +1,17 @@
 interface IcreateTemplate {
   clientBundleScript: string;
-  clientBundleStyle: string;
+  styleTags: string;
   content: string;
 }
 
-export const createTemplate = ({ clientBundleScript, clientBundleStyle, content }: IcreateTemplate) => `
+export const createTemplate = ({ clientBundleScript, styleTags, content }: IcreateTemplate) => `
         <!DOCTYPE html>
         <html lang="en">
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>My SSR App</title>
-                ${clientBundleStyle} 
+                ${styleTags} 
             </head>
             <body>
                 <div id='ssr-app'>${content}</div>

@@ -1,15 +1,11 @@
 import React from 'react';
-import styled from 'styled-components'
+import { Login } from '../views/Login';
+import { Providers } from './Providers';
 
-const Greeting = styled.h1`
-  color: green;
-`
-
-const App = () => (
-  <>
-    <Greeting>Hello World</Greeting>
-    <button onClick={e => alert('Hello You!')}>Say Hello Back!</button>
-  </>
+const App: React.FC = () => (
+  <Providers>
+    <Login />
+  </Providers>
 );
 
 export default App;
