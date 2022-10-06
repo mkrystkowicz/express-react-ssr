@@ -1,10 +1,10 @@
 import React from 'react';
-import { LoginForm } from './LoginForm/LoginForm';
+import { Login } from '../views/Login';
 import { Providers } from './Providers';
 
 const App: React.FC = () => (
   <Providers>
-    <LoginForm />
+    <Login />
   </Providers>
 );
 
